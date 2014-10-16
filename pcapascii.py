@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 from pprint import pprint
 from optparse import OptionParser
 from scapy.all import send, IP, UDP, TCP, DNS, DNSQR, Ether, Dot1Q
@@ -48,6 +47,7 @@ class WireFaker(object):
 
 if __name__ == "__main__":
     opts, args = parser.parse_args()
+    parser.print_help()
     faker = WireFaker(opts.source, opts.destination, opts.use_http)
     for _ in xrange(opts.num_repeats):
         for arg in args:
